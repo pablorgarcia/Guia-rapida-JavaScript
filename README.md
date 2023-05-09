@@ -103,7 +103,7 @@ cuentaAtras(3)
 ```
 
 Otro ejemplo. Sacamos el número factorial. El factorial de un número es el resultado de multiplicar ese número por todos los anteriores hasta llegar a 1.
-Por ejemplo, el factorial de 5 es 5 * 4 * 3 * 2 * 1 = 120
+El factorial de 5 es 5 * 4 * 3 * 2 * 1 = 120
 ```
 function factorial(n) {
   // Condición base: Si el número es 0 o 1, devolvemos 1
@@ -120,15 +120,15 @@ factorial(5) // Resultado: 120
 factorial(3) // Resultado: 6
 ```
 
-Otro ejemplo:
+Otro ejemplo. Escribimos una función que calcule la suma de los primeros n números enteros de forma recursiva
 ```
-function recursive(n) {
+function sumRecursive(n) {
   if (n === 0) {
     return 0
   } else {
-    return n + recursive(n - 1)
+    return n + sumRecursive(n - 1)
   }
 }
 
-recursive(3) // 6
+sumRecursive(3) // 6
 ```
