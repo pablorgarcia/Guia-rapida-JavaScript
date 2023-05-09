@@ -116,8 +116,8 @@ function factorial(n) {
   }
 }
 
-console.log(factorial(5)) // Resultado: 120
-console.log(factorial(3)) // Resultado: 6
+factorial(5) // Resultado: 120
+factorial(3) // Resultado: 6
 ```
 
 Otro ejemplo:
