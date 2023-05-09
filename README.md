@@ -15,7 +15,7 @@ Tipos no primitivos
 2. `Function`
 
 ### Bug en JavaScript
-`typeof null // Object (y debería ser null)`
+`typeof null // Object (❌ y debería ser null)`
 
 Para ver si algo responde null:
 ```
