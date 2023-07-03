@@ -101,7 +101,6 @@ cuentaAtras(3)
 // -> 1
 // -> 0
 ```
-
 Otro ejemplo. Sacamos el número factorial. El factorial de un número es el resultado de multiplicar ese número por todos los anteriores hasta llegar a 1.
 El factorial de 5 es 5 * 4 * 3 * 2 * 1 = 120
 ```
@@ -136,7 +135,7 @@ sumRecursive(3) // 6
 ## Métodos de un Array
 Cuando trabajamos con colecciones de elementos, vamos a querer hacer cosas con ellos. Por ejemplo: añadir un elemento, eliminarlo, buscarlo, etc. Para ello, los arrays tienen una serie de métodos que nos permiten hacer estas operaciones:
 
-### .push()
+### push
 Añade un elemento al final de un array
 ```
 const frutas = ["plátano", "fresa"]
@@ -153,7 +152,7 @@ console.log(newLength) // 3
 console.log(frutas) // ["plátano", "fresa", "naranja"]
 ```
 
-### .pop()
+### pop
 Elimina y devuelve el último elemento de un array:
 ```
 const frutas = ["plátano", "fresa", "naranja"]
@@ -163,8 +162,8 @@ console.log(frutas) // ["plátano", "fresa"]
 console.log(ultimaFruta) // "naranja"
 ```
 
-### .shift()
-Elimina y devuelve el primer elemento de un array. Es lo mismo que .pop(), pero con el primer elemento en lugar del último:
+### shift
+Elimina y devuelve el primer elemento de un array. Es lo mismo que `pop`, pero con el primer elemento en lugar del último:
 ```
 const frutas = ["plátano", "fresa", "naranja"]
 const primeraFruta = frutas.shift()
@@ -173,8 +172,8 @@ console.log(frutas) // ["fresa", "naranja"]
 console.log(primeraFruta) // "plátano"
 ```
 
-### .unshift()
-Añade un elemento al principio de un array. Es lo mismo que .push(), pero con el primer elemento en lugar del último:
+### unshift
+Añade un elemento al principio de un array. Es lo mismo que `push`, pero con el primer elemento en lugar del último:
 ```
 const frutas = ["plátano", "fresa", "naranja"]
 frutas.unshift("manzana")
@@ -182,7 +181,7 @@ frutas.unshift("manzana")
 console.log(frutas) // ["manzana", "plátano", "fresa", "naranja"]
 ```
 
-### .concat()
+### concat
 Nos va a devolver un nuevo array que va a concatenar el primer array con el segundo 
 ```
 const numbers = [1, 2, 3]
@@ -192,7 +191,7 @@ const allNumbers = numbers.concat(numbers2)
 
 console.log(allNumbers) // [1, 2, 3, 4, 5]
 ```
-Otra forma de concatenar arrays es usando el operador ... (spread operator). Este operador propaga los elementos de un array. Así que podríamos hacer lo siguiente:
+Otra forma de concatenar arrays es usando el operador `...` (spread operator). Este operador propaga los elementos de un array. Así que podríamos hacer lo siguiente:
 ```
 const numbers = [1, 2, 3]
 const numbers2 = [4, 5]
@@ -228,7 +227,6 @@ for (let i = 0; i < frutas.length; i++) {
   console.log(frutas[i]) // imprime el elemento en la posición i
 }
 ```
-
 También podrías recorrer el array en orden inverso, empezando desde el último elemento hasta el primero, usando i-- en lugar de i++.
 ```
 let frutas = ['🍎', '🍌', '🍓']
@@ -253,7 +251,7 @@ for (let fruta of frutas) {
 ```
 
 ### El método array.forEach()
-permite ejecutar una function para cada uno de los elementos del array. Esta función recibe como parámetros el elemento que se está iterando en ese momento, el índice del elemento y el propio array.
+Permite ejecutar una function para cada uno de los elementos del array. Esta función recibe como parámetros el elemento que se está iterando en ese momento, el índice del elemento y el propio array.
 `forEach` es una forma muy eficiente y legible de iterar sobre un array si no necesitas `break` y si no necesitas controlar manualmente el índice.
 Importante: no devuelve nada, por lo que no podemos asignar el resultado a una variable.
 ```
@@ -274,7 +272,7 @@ frutas.forEach((fruta) => {
 
 ## Búsqueda en Arrays con sus métodos
 
-### .indexOf() ¿En qué posición está el elemento?
+### indexOf ¿En qué posición está el elemento?
 Encuentra la posición de un elemento dentro de un array. Si el elemento no existe, entonces retorna -1.
 ```
 const emojis = ['✨', '🥑', '😍']
@@ -284,10 +282,10 @@ const posicionCorazon = emojis.indexOf('😍')
 console.log(posicionCorazon) // -> 2
 ```
 
-### .includes()
+### includes
 Determina si un array incluye un determinado elemento, devolviendo true o false según corresponda.
 Es la forma más sencilla y corta de buscar un elemento específico. Sin embargo, si queremos revisar si un array contiene un elemento que cumpla con una condición, entonces tenemos que utilizar otros métodos.
-También funciona con las cadenas de texto. Puedes utilizarlo para buscar una subcadena dentro de una cadena de texto: 'Hola mundo'.includes('Hola') // -> true
+También funciona con las cadenas de texto. Puedes utilizarlo para buscar una subcadena dentro de una cadena de texto: `'Hola mundo'.includes('Hola') // -> true`
 ```
 const emojis = ['✨', '🥑', '😍']
 
@@ -296,7 +294,7 @@ const tieneCorazon = emojis.includes('😍')
 console.log(tieneCorazon) // -> true
 ```
 
-### .some() ¿Alguno de los elementos cumple con la condición?
+### some ¿Alguno de los elementos cumple con la condición?
 Verifica si al menos uno de los elementos de un array cumple con una condición.
 
 Se le pasas una función como argumento. Esta función recibe como argumento cada uno de los elementos del array y debe retornar un valor booleano.
@@ -308,7 +306,7 @@ const emojis = ['✨', '🥑', '😍']
 const tieneCorazon = emojis.some(emoji => emoji === '😍')
 console.log(tieneCorazon) // -> true
 ```
-Esto ya lo podíamos hacer con `.includes()` Sí, pero `.some()` es mucho más potente
+Esto ya lo podíamos hacer con `includes` Sí, pero `some` es mucho más potente
 
 Podemos crear una función que verifique si un array contiene un elemento que sea un string de más de 3 caracteres.
 ```
@@ -317,7 +315,7 @@ const names = ['Leo', 'Isa', 'Ían', 'Lea']
 const tieneNombreLargo = names.some(name => name.length > 3)
 console.log(tieneNombreLargo) // -> false
 ```
-Importante: Deja de iterar sobre el array en cuanto encuentra un elemento que cumple con la condición. Por ejemplo, si tenemos un array de 10 elementos y el elemento número 3 cumple con la condición, el método `.some()` no va a iterar sobre los 7 elementos restantes:
+Importante: Deja de iterar sobre el array en cuanto encuentra un elemento que cumple con la condición. Por ejemplo, si tenemos un array de 10 elementos y el elemento número 3 cumple con la condición, el método `some` no va a iterar sobre los 7 elementos restantes:
 ```
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -329,8 +327,8 @@ const tieneNumeroMayorA5 = numbers.some(number => {
 console.log(tieneNumeroMayorA5) // -> true
 ```
 
-### .every() ¿Todos los elementos cumplen con la condición?
-Verifica si todos los elementos de un array cumplen con una condición. Es similar a `.some()`, pero en lugar de verificar si al menos uno de los elementos cumple con la condición, los verifica todos.
+### every ¿Todos los elementos cumplen con la condición?
+Verifica si todos los elementos de un array cumplen con una condición. Es similar a `some`, pero en lugar de verificar si al menos uno de los elementos cumple con la condición, los verifica todos.
 
 Para utilizarlo, le pasas una función como argumento. Esta función recibe como argumento el elemento del array que está iterando en ese momento y debe retornar un valor booleano para saber si el elemento cumple con la condición.
 
@@ -351,10 +349,10 @@ const names = ['Miguel', 'Juan', 'Itziar', 'Isabel']
 const todosLosNombresSonLargos = names.every(name => name.length > 3)
 console.log(todosLosNombresSonLargos) // -> true
 ```
-Al igual que `.some()`, el método every deja de iterar sobre el Array en cuanto encuentra un elemento que no cumple con la condición.
+Al igual que `some`, el método every deja de iterar sobre el Array en cuanto encuentra un elemento que no cumple con la condición.
 
 
-### .find() Devuelve el primer elemento que cumple con la condición
+### find devuelve el primer elemento que cumple con la condición
 Encuentra el primer elemento que cumple con una condición. Lo interesante es que este método te devuelve el elemento en sí, no un valor booleano como some y every. Aunque el funcionamiento es igual: hay que pasarle una función como argumento que retorne un valor booleano.
 ```
 const numbers = [13, 27, 44, -10, 81]
@@ -373,7 +371,7 @@ console.log(firstNegativeNumber) // -> undefined
 ```
 Igual que `some` y `every`, el método `find` deja de iterar sobre el array en cuanto encuentra un elemento que cumple con la condición.
 
-### findIndex: Devuelve el índice del primer elemento que cumple con la condición
+### findIndex devuelve el índice del primer elemento que cumple con la condición
 Es similar a `find`, pero en lugar de devolver el elemento que cumple con la condición, devuelve el índice de ese elemento.
 ```
 const numbers = [13, 27, 44, -10, 81]
