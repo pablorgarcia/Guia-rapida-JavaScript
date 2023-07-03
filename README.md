@@ -1,4 +1,4 @@
-# Guia-rapida-para-JavaScript
+# Guia-rapida-JavaScript
 
 ## 9 Tipos de datos
 Tipos primitivos
