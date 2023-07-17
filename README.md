@@ -398,8 +398,7 @@ console.log(firstNegativeNumberIndex) // -> -1
 
 
 
-
-
+---
 
 ### El método structuredClone
 Copia objetos y arrays de forma profunda
