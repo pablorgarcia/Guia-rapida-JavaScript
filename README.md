@@ -395,3 +395,68 @@ console.log(firstNegativeNumberIndex) // -> -1
 ```
 
 
+
+
+
+
+
+
+### El método structuredClone
+Copia objetos y arrays de forma profunda
+```
+// copia profunda
+const obj = { a: {b: true} }
+const deepCopy = structuredClone(obj)
+deepCopy.a.b = false
+console.log(obj) // {a: {b: true}}
+
+// copia superficial
+const shallowCopy = { ... obj }
+shallowCopy.a.b = false
+console.log(obj) // {a: {b: false}}
+```
+
+### El método scrollIntoView
+Desplázate hasta poner a la vista un elemento
+```
+const button = document.querySelector('button')
+const section = document.querySelector('section')
+
+button.addEventListener('click', () => {
+  section?.scrollIntoView({behavior: 'smooth'})
+})
+```
+
+### El método randomUUID
+Crea un identificador único sin dependencias
+```
+const uuid = crypto.randomUUID()
+console.log(uuid) // '64b4fa6b-c482-489e-8626-75e5aa066d38'
+```
+
+### El método URL
+Parsea direcciones sin necesidad de usar Regex
+```
+const url = new URL("https:pablorgarcia.github.io/search?q=javascript")
+
+// obtener diferentes partes de la URL
+console.log(url.href) // "https:pablorgarcia.github.io/search?q=javascript"
+console.log(url.host) // "pablorgarcia.github.io"
+console.log(url.pathname) // "/search"
+console.log(url.search) // "?q=javascript"
+console.log(url.searchParams) // URLSearchParams {'q' -> 'javascript'}
+```
+
+### El método RelativeTimeFormat
+Consigue tiempos relativos en cualquier idioma
+```
+const rtf = new Intl.RelativeTimeFormat("en")
+rtf.format(2, "hour") // 'in 2 hours'
+rtf.format(-15, "minute") // '15 minutes ago'
+
+const rtfEs = new Intl.RelativeTimeFormat("es")
+rtfEs.format(2, "month") // 'dentro de 2 meses'
+rtfEs.format(-15, "minute") // 'hace 15 minutos'
+```
+
+
